@@ -46,6 +46,15 @@ The file continuous control takes around 220 episodes to achieve a reward of **+
 2. Place the file in a convenient location on your computer enbaling you to invoke the environment. Continuous_Control.ipynb walks
    you  through how this can be achieved
 
+
+### Files Breakdown
+
+    - model.py -> Contains the defined Architecture for the Actor and Critic networks
+    - ddpg.py  -> The file contains the algorithm which is built off of Replay buffer method
+    - Continuous_Control.ipynb -> The notebook contains the information required to train the model using the above two files
+    -Continuous_Control_Report.ipynb -> Includes a jupyter writeup on what each segment of the code is doing
+
+
 ### Instructions
 
 Follow the instructions in `Continuous_Control.ipynb` to get started with training your own agent!  
