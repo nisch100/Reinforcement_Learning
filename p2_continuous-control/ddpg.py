@@ -9,13 +9,13 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
-BUFFER_SIZE = int(1e7)  # replay buffer size
-BATCH_SIZE = 512        # minibatch size
-GAMMA = 0.99            # discount factor
+BUFFER_SIZE = int(1e5)  # replay buffer size
+BATCH_SIZE = 128        # minibatch size
+GAMMA = 0.93            # discount factor
 TAU = 1e-3              # for soft update of target parameters
-LR_ACTOR = 5e-4         # learning rate of the actor 
-LR_CRITIC = 5e-4        # learning rate of the critic
-WEIGHT_DECAY = 0        # L2 weight decay
+LR_ACTOR = 1.5e-4         # learning rate of the actor 
+LR_CRITIC = 1.5e-4        # learning rate of the critic
+WEIGHT_DECAY = int(1e-5)        # L2 weight decay
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -81,6 +81,7 @@ class Agent():
         where:
             actor_target(state) -> action
             critic_target(state, action) -> Q-value
+        
         Params
         ======
             experiences (Tuple[torch.Tensor]): tuple of (s, a, r, s', done) tuples 
@@ -92,6 +93,7 @@ class Agent():
         # Get predicted next-state actions and Q values from target models
         actions_next = self.actor_target(next_states)
         Q_targets_next = self.critic_target(next_states, actions_next)
+        
         # Compute Q targets for current states (y_i)
         Q_targets = rewards + (gamma * Q_targets_next * (1 - dones))
         # Compute critic loss
@@ -100,6 +102,7 @@ class Agent():
         # Minimize the loss
         self.critic_optimizer.zero_grad()
         critic_loss.backward()
+        
         self.critic_optimizer.step()
 
         # ---------------------------- update actor ---------------------------- #
@@ -118,6 +121,7 @@ class Agent():
     def soft_update(self, local_model, target_model, tau):
         """Soft update model parameters.
         θ_target = τ*θ_local + (1 - τ)*θ_target
+        
         Params
         ======
             local_model: PyTorch model (weights will be copied from)
