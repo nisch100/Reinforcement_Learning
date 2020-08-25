@@ -48,8 +48,8 @@ The file continuous control takes around 220 episodes to achieve a reward of **+
 
 
 ### Files Breakdown
- 1.)model.py -> Contains the defined Architecture for the Actor and Critic networks
- 2.)ddpg.py  -> The file contains the algorithm which is built off of Replay buffer method
+
+ 1.)model.py -> Contains the defined Architecture for the Actor and Critic networks                                                                                          2.)ddpg.py  -> The file contains the algorithm which is built off of Replay buffer method
  3.)Continuous_Control.ipynb -> The notebook contains the information required to train the model using the above two files
  4.)Continuous_Control_Report.ipynb -> Includes a jupyter writeup on what each segment of the code is doing
 
