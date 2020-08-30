@@ -17,10 +17,7 @@ TAU = 2e-3             # for soft update of target parameters
 LR_ACTOR = 1e-3        # learning rate of the actor
 LR_CRITIC = 1e-3       # learning rate of the critic
 WEIGHT_DECAY = 0       # L2 weight decay
-
-learning_samples = 10            # number of learning passes
-
-# Ornstein-Uhlenbeck noise parameters
+learning_samples = 10
 OU_SIGMA = 0.1
 OU_THETA = 0.15
 
@@ -65,9 +62,6 @@ class Agent():
         
     def step(self, state, action, reward, next_state, done, timestep):
         """Save experience in replay memory, and use random sample from buffer to learn"""
-        # save experience/reward
-        # if updating in batches, then add the last memory of the agents(e.g. 20 agents) to a buffer
-        #  and if we've met batch size, push to learn in multiples of LEARN_NUM
         self.memory.add(state, action, reward, next_state, done)
         
         # Learn, if enough samples are available in memory
@@ -131,9 +125,6 @@ class Agent():
         # update target networks
         self.soft_update(self.critic_local, self.critic_target, TAU)
         self.soft_update(self.actor_local, self.actor_target, TAU)
-        # update epsilon decay
-        #if EPSILON_DECAY > 0:
-        #    self.epsilon -= EPSILON_DECAY
         self.noise.reset()
             
     def soft_update(self, local_model, target_model, tau):
