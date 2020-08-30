@@ -25,12 +25,13 @@ The ebvironment can initially be a little slow while training. However it tends 
 
 
 **Files Breakdown**
+
 1.)model.py -> Contains the defined Architecture for the Actor and Critic networks\
 2.)ddpg.py -> The file contains the algorithm which is built off of Replay buffer method\
 3.)Continuous_Control.ipynb -> The notebook contains the information required to train the model using the above two files\
 4.)Continuous_Control_Report.ipynb -> Includes a jupyter writeup on what each segment of the code is doing\
-5.)Actor.pth -> Stores the weights for the actor network that were tunes as the agent learned\
-6.)Critic.pth -> Stores the weights for the critic network that were tunes as the agent learned\
+5.)Actor_final.pth -> Stores the weights for the actor network that were tunes as the agent learned\
+6.)Critic_final.pth -> Stores the weights for the critic network that were tunes as the agent learned\
 
 ### Getting Started
 
