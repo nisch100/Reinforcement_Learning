@@ -8,7 +8,7 @@
 
 ### Introduction
 
-For this project, you will work with the [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis) environment.
+The involves implementing Multi-Agent Reinforcement Learning in a [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis) environment.
 
 ![Trained Agent][image1]
 
@@ -21,7 +21,7 @@ The task is episodic, and in order to solve the environment, your agents must ge
 - After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.
 - This yields a single **score** for each episode.
 
-The environment is considered solved, when the average (over 100 episodes) of those **scores** is at least +0.5.
+The ebvironment can initially be a little slow while training. However it tends to pick up after 200 episodes thus attaining an average score of **0.5** at around 400 episodes.
 
 ### Getting Started
 
@@ -40,23 +40,3 @@ The environment is considered solved, when the average (over 100 episodes) of th
 ### Instructions
 
 Follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
-
-### (Optional) Challenge: Crawler Environment
-
-After you have successfully completed the project, you might like to solve the more difficult **Soccer** environment.
-
-![Soccer][image2]
-
-In this environment, the goal is to train a team of agents to play soccer.  
-
-You can read more about this environment in the ML-Agents GitHub [here](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#soccer-twos).  To solve this harder task, you'll need to download a new Unity environment.  (**Note**: Udacity students should not submit a project with this new environment.)
-
-You need only select the environment that matches your operating system:
-- Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Linux.zip)
-- Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer.app.zip)
-- Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Windows_x86.zip)
-- Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Windows_x86_64.zip)
-
-Then, place the file in the `p3_collab-compet/` folder in the DRLND GitHub repository, and unzip (or decompress) the file.  Next, open `Soccer.ipynb` and follow the instructions to learn how to use the Python API to control the agent.
-
-(_For AWS_) If you'd like to train the agents on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Linux_NoVis.zip) to obtain the "headless" version of the environment.  You will **not** be able to watch the agents without enabling a virtual screen, but you will be able to train the agents.  (_To watch the agents, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
