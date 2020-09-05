@@ -21,7 +21,7 @@ The task is episodic, and in order to solve the environment, your agents must ge
 - After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.
 - This yields a single **score** for each episode.
 
-The ebvironment can initially be a little slow while training. However it tends to pick up after 200 episodes thus attaining an average score of **0.5** at around 400 episodes.
+The ebvironment can initially be a little slow while training. However it tends to pick up after 200 episodes thus attaining an average score of **0.5** at around 400 episodes
 
 
 **Files Breakdown**
